@@ -1,0 +1,116 @@
+/**
+ * Tests whether or not a string is a doubloon.
+ * 
+ * @author Luunyby
+ * @version 1.0
+ */
+
+public class Loopy {
+    /**
+     * Just does everything.
+     */
+    
+    public static void main(String[] args) {
+        /**
+         * Initializes necessary variables.
+         * 
+         * @param doubloon Stores the string that's getting checked
+         * @param arrayContainer A 26 integer long array to denote letters of the American Alphabet
+         * @param flag Used to test if string is empty
+         * @param checked Used to test if every letter was checked
+         */
+        String doubloon = "69";
+        int[] arrayContainer;
+        arrayContainer = new int[26];
+        int flag = 0;
+        int checked = 0;
+        
+        /**
+         * For loop iterates over the doubloon string and adds one to corresponding letter in arrayContainer.
+         * 
+         * @param lengthOfString Holds the length of the doubloon
+         */
+        int lengthOfString = doubloon.length();
+        for( int i = 0  ; i < lengthOfString; i++) {
+            switch (doubloon.charAt(i)){
+                case 'a': arrayContainer[0]++;
+                    break;
+                case 'b': arrayContainer[1]++;
+                    break;
+                case 'c': arrayContainer[2]++;
+                    break;
+                case 'd': arrayContainer[3]++;
+                    break;
+                case 'e': arrayContainer[4]++;
+                    break;
+                case 'f': arrayContainer[5]++;
+                    break;
+                case 'g': arrayContainer[6]++;
+                    break;    
+                case 'h': arrayContainer[7]++;
+                    break;
+                case 'i': arrayContainer[8]++;
+                    break;
+                case 'j': arrayContainer[9]++;
+                    break;
+                case 'k': arrayContainer[10]++;
+                    break;
+                case 'l': arrayContainer[11]++;
+                    break;
+                case 'm': arrayContainer[12]++;
+                    break;
+                case 'n': arrayContainer[13]++;
+                    break;
+                case 'o': arrayContainer[14]++;
+                    break;
+                case 'p': arrayContainer[15]++;
+                    break;
+                case 'q': arrayContainer[16]++;
+                    break;
+                case 'r': arrayContainer[17]++;
+                    break;
+                case 's': arrayContainer[18]++;
+                    break;
+                case 't': arrayContainer[19]++;
+                    break;
+                case 'u': arrayContainer[20]++;
+                    break;
+                case 'v': arrayContainer[21]++;
+                    break;
+                case 'w': arrayContainer[22]++;
+                    break;
+                case 'x': arrayContainer[23]++;
+                    break;
+                case 'y': arrayContainer[24]++;
+                    break;
+                case 'z': arrayContainer[25]++;
+                    break;    
+            }
+        }
+        /*
+         * Iterates over the arrayContainer to check if it's all 0's and 2's, increments flag and checked.
+         */
+        for(int i = 0; i < arrayContainer.length; i++){
+            if( arrayContainer[i] == 2 || arrayContainer[i] == 0){
+                if(arrayContainer[i] == 0){
+                    flag++;
+                    checked++;
+                } else {
+                    checked++;
+                }    
+            } else {
+                System.out.println("The string " + doubloon + " is not a doubloon");
+                break;
+            }
+        }
+        /*
+         * Checks if every letter was flag (== 0) or just checked (== 2).
+         */
+        if(flag == 26){
+            System.out.println("There was no string.");
+        } else if(checked == 26) {
+            System.out.println("The string " + doubloon + " is a doubloon!");
+        }
+        
+    }
+}
